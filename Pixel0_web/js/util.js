@@ -19,7 +19,7 @@ async function renderProyects(){
     for(a = 0 ; a < proyect.proyects.length ; a++){
 
         let inner = 
-                `<div class="proyect">
+                ` <div class="proyect">
 
                  
                     
@@ -39,6 +39,10 @@ async function renderProyects(){
         tarjeta.setAttribute("class","  col-xs-4 ");
 
         tarjeta.innerHTML=inner;
+
+        tarjeta.addEventListener("click", function(){
+            console.log(this);
+        });
         
         document.getElementById("proyects").append(tarjeta);
         
@@ -47,11 +51,12 @@ async function renderProyects(){
 
 }
 
-
     renderProyects();
 
+    
+    
 
-
-   const proyects = document.getElementsByClassName("proyect");
-
-   console.log(proyects);
+    document.addEventListener("DOMContentLoaded", function(event) {
+        console.log("readiy");
+        console.log(document.getElementsByClassName("proyect"));
+    });
